@@ -9,7 +9,7 @@
 import Foundation
 struct AerisApiClient {
     static func searchWeatherForcast(ZipCodeInPut: String, callBack: @escaping (AppError?, [AllForcastData]?) -> Void){
-        let endpointURLString = APIKey.url
+        let endpointURLString = "http://api.aerisapi.com/forecasts/\(ZipCodeInPut)?client_id=\(APIKey.clientId)&client_secret=\(APIKey.clientKey)"
         guard let url = URL(string: endpointURLString) else {
             callBack(AppError.badURL(endpointURLString), nil)
             return

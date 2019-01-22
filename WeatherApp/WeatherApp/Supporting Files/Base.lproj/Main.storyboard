@@ -26,7 +26,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="226" id="fCv-Mo-wFM"/>
                                 </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="OHB-Yb-BhD">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="OHB-Yb-BhD">
                                     <size key="itemSize" width="214" height="215"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -34,7 +34,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ForecastCellID" id="buS-GH-zzM" customClass="CollectionViewCell" customModule="WeatherApp" customModuleProvider="target">
-                                        <rect key="frame" x="69.5" y="0.0" width="214" height="215"/>
+                                        <rect key="frame" x="0.0" y="5.5" width="214" height="215"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="214" height="215"/>
@@ -138,6 +138,7 @@
                     <connections>
                         <outlet property="titleLabelObj" destination="zVZ-NO-fbN" id="PGC-BB-sF2"/>
                         <outlet property="userInputTxtFieldObj" destination="AU1-a1-1G6" id="PrN-bc-Dgj"/>
+                        <outlet property="weakForcastCollectionViewObj" destination="shc-rM-Ml7" id="j7V-LD-Tdq"/>
                         <outlet property="zipCodeTitleLabelObj" destination="U1M-mY-2iA" id="giu-py-8TR"/>
                     </connections>
                 </viewController>
@@ -267,6 +268,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="g1c-aY-jBk" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="lF2-t9-fgi">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
