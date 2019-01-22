@@ -13,6 +13,7 @@ class MainForcastViewController: UIViewController {
     @IBOutlet weak var userInputTxtFieldObj: UITextField!
     @IBOutlet weak var zipCodeTitleLabelObj: UILabel!
     @IBOutlet weak var weakForcastCollectionViewObj: UICollectionView!
+    var defaultZipcode = "10009"
     var forcastReport = [PeriodsInfoArray](){
         didSet{
             DispatchQueue.main.async {
@@ -27,7 +28,7 @@ class MainForcastViewController: UIViewController {
         userInputTxtFieldObj.delegate = self
         weakForcastCollectionViewObj.dataSource = self
         gatherWeatherForcastData(zipcodeEntry: "10009")
-        dump(self.forcastReport)
+//        dump(self.forcastReport)
   }
     func gatherWeatherForcastData(zipcodeEntry: String){
         AerisApiClient.searchWeatherForcast(zipcodeEntry: zipcodeEntry) { (appError, onlineWeatherData) in
@@ -37,7 +38,7 @@ class MainForcastViewController: UIViewController {
             if let onlineWeatherData = onlineWeatherData {
 //                print(" at this zip code \(zipcodeEntry) we have \(onlineWeatherData.count) counts of data")
                 self.forcastReport = onlineWeatherData.response[0].periods
-                dump(self.forcastReport)
+//                dump(self.forcastReport)
 
             }
         }
@@ -46,11 +47,12 @@ class MainForcastViewController: UIViewController {
 
 extension MainForcastViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.becomeFirstResponder()
         if var txtEntryFromUser = [textField].first?.text{
             if txtEntryFromUser == "" {
-                txtEntryFromUser = "10009"
+                txtEntryFromUser = defaultZipcode
             }
-            gatherWeatherForcastData(zipcodeEntry: txtEntryFromUser)
+            gatherWeatherForcastData(zipcodeEntry: userInputTxtFieldObj.text ?? "Error")
             UserDefaults.standard.set(txtEntryFromUser, forKey: txtEntryFromUser)
             return true
         } else {
@@ -69,9 +71,9 @@ extension MainForcastViewController: UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ForecastCellID", for: indexPath) as? CollectionViewCell else {return UICollectionViewCell()}
         let settingWeatherData = forcastReport[indexPath.row]
         cell.dateLabelObj.text = settingWeatherData.dateFormattedString
-        cell.highTemperatureReadingLabelObj.text = "\(settingWeatherData.maxTempF) F"
-        cell.lowTemperatureReadingLabelObj.text = "\(settingWeatherData.minTempF) F"
-        
+        cell.highTemperatureReadingLabelObj.text = "\(settingWeatherData.maxTempF) °F"
+        cell.lowTemperatureReadingLabelObj.text = "\(settingWeatherData.minTempF) °F"
+        cell.forcastImageObj.image = UIImage.init(named: settingWeatherData.images)
         return cell
     }
     

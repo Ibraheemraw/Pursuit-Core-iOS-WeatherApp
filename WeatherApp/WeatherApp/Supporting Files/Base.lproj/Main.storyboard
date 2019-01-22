@@ -22,7 +22,7 @@
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="shc-rM-Ml7">
                                 <rect key="frame" x="11" y="94" width="353" height="226"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="226" id="fCv-Mo-wFM"/>
                                 </constraints>
@@ -66,7 +66,7 @@
                                                 </label>
                                             </subviews>
                                         </view>
-                                        <color key="backgroundColor" red="0.69172198399999996" green="0.91588606859999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="blD-em-IaN" firstAttribute="leading" secondItem="buS-GH-zzM" secondAttribute="leadingMargin" constant="11" id="6Ff-aC-jVv"/>
                                             <constraint firstAttribute="trailing" secondItem="CdU-eY-UmR" secondAttribute="trailing" id="6Rw-M5-V8t"/>

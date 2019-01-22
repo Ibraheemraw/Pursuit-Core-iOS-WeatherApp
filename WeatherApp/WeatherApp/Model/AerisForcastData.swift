@@ -35,6 +35,10 @@ struct PeriodsInfoArray: Codable {
     //
     let weatherPrimary: String
     let icon: String
+    var images: String {
+        let iconArr = icon.components(separatedBy: ".")
+        return iconArr[0]
+    }
     let sunrise: Int
     let sunset: Int
 }
