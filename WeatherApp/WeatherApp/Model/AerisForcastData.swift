@@ -32,6 +32,8 @@ struct PeriodsInfoArray: Codable {
     let maxTempF: Int
     let minTempF: Int
     let weather: String
+    let precipIN: Double
+    let windSpeedMPH: Int
     //
     let weatherPrimary: String
     let icon: String
@@ -39,7 +41,29 @@ struct PeriodsInfoArray: Codable {
         let iconArr = icon.components(separatedBy: ".")
         return iconArr[0]
     }
-    let sunrise: Int
-    let sunset: Int
+    let sunriseISO: String
+    var sunriseDateFormattedString: String{
+        let isoDateFormatter = ISO8601DateFormatter()
+        var formattedDate = sunriseISO
+        if let date = isoDateFormatter.date(from: sunriseISO){
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "hh:mm:ss"
+            
+            formattedDate = dateFormatter.string(from: date)
+        }
+        return formattedDate
+    }
+    let sunsetISO: String
+    var sunsetDateFormattedString: String{
+        let isoDateFormatter = ISO8601DateFormatter()
+        var formattedDate = sunsetISO
+        if let date = isoDateFormatter.date(from: sunsetISO){
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "hh:mm:ss"
+            
+            formattedDate = dateFormatter.string(from: date)
+        }
+        return formattedDate
+    }
 }
 
