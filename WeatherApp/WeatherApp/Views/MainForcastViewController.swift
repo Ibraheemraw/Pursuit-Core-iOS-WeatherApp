@@ -85,13 +85,9 @@ extension MainForcastViewController: UICollectionViewDelegateFlowLayout{
         let destinationVC = sb.instantiateViewController(withIdentifier: "DetailWeatherBoardID") as! DetailForcastViewController
         let forecastItem = forcastReport[indexPath.row]
         destinationVC.expectingForecastObj = forecastItem
-        present(destinationVC, animated: true, completion: nil)
+//        present(destinationVC, animated: true, completion: nil)
+self.navigationController?.pushViewController(destinationVC, animated: true)
         
-        /*
-         
-         let pokemonCard = pokemoncards[indexPath.row]
-         pokemonViewController.pokemonDetailcards = pokemonCard
-         present(pokemonViewController, animated: true)
-         */
+       
     }
 }

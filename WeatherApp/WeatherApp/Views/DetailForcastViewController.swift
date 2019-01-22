@@ -21,8 +21,11 @@ class DetailForcastViewController: UIViewController {
     var expectingForecastObj: PeriodsInfoArray!
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupDetailForecastUI()
     }
-    
+    func setupDetailForecastUI() {
+        
+    }
     
     
     
