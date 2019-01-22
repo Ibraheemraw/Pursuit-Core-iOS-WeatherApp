@@ -29,6 +29,7 @@ class MainForcastViewController: UIViewController {
         weakForcastCollectionViewObj.dataSource = self
         gatherWeatherForcastData(zipcodeEntry: "10009")
 //        dump(self.forcastReport)
+        weakForcastCollectionViewObj.delegate = self
   }
     func gatherWeatherForcastData(zipcodeEntry: String){
         AerisApiClient.searchWeatherForcast(zipcodeEntry: zipcodeEntry) { (appError, onlineWeatherData) in
@@ -76,6 +77,21 @@ extension MainForcastViewController: UICollectionViewDataSource {
         cell.forcastImageObj.image = UIImage.init(named: settingWeatherData.images)
         return cell
     }
-    
-    
+}
+
+extension MainForcastViewController: UICollectionViewDelegateFlowLayout{
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let sb = UIStoryboard.init(name: "Main", bundle: nil)
+        let destinationVC = sb.instantiateViewController(withIdentifier: "DetailWeatherBoardID") as! DetailForcastViewController
+        let forecastItem = forcastReport[indexPath.row]
+        destinationVC.expectingForecastObj = forecastItem
+        present(destinationVC, animated: true, completion: nil)
+        
+        /*
+         
+         let pokemonCard = pokemoncards[indexPath.row]
+         pokemonViewController.pokemonDetailcards = pokemonCard
+         present(pokemonViewController, animated: true)
+         */
+    }
 }

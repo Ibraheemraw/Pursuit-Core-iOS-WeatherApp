@@ -18,6 +18,7 @@ class DetailForcastViewController: UIViewController {
     @IBOutlet weak var sunsetTimeStampLabelObj: UILabel!
     @IBOutlet weak var windSpeedLabelObj: UILabel!
     @IBOutlet weak var inchesOfPercipitationLabelObj: UILabel!
+    var expectingForecastObj: PeriodsInfoArray!
     override func viewDidLoad() {
         super.viewDidLoad()
     }
