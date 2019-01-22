@@ -8,8 +8,8 @@
 
 import Foundation
 struct AerisApiClient {
-    static func searchWeatherForcast(ZipCodeInPut: String, callBack: @escaping (AppError?, [AllForcastData]?) -> Void){
-        let endpointURLString = "http://api.aerisapi.com/forecasts/\(ZipCodeInPut)?client_id=\(APIKey.clientId)&client_secret=\(APIKey.clientKey)"
+    static func searchWeatherForcast(zipcodeEntry: String, callBack: @escaping (AppError?, AerisForcastData?) -> Void){
+        let endpointURLString = "https://api.aerisapi.com/forecasts/\(zipcodeEntry)?client_id=\(APIKey.clientId)&client_secret=\(APIKey.clientKey)"
         guard let url = URL(string: endpointURLString) else {
             callBack(AppError.badURL(endpointURLString), nil)
             return
@@ -28,7 +28,7 @@ struct AerisApiClient {
             if let data = data {
                 do {
                    let weatherData = try JSONDecoder().decode(AerisForcastData.self, from: data)
-                    callBack(nil, weatherData.response)
+                    callBack(nil, weatherData)
                 } catch {
                     callBack(AppError.jsonDecodingError(error), nil)
                 }

@@ -13,14 +13,24 @@ struct AerisForcastData: Codable {
 
 struct AllForcastData: Codable {
     let periods: [PeriodsInfoArray]
-    let profile: TimeZoneLocationDictionary
     
 }
 struct PeriodsInfoArray: Codable {
     let timestamp: Int
     let validTime: String
-    let maxTempF: String
-    let minTempF: String
+    var dateFormattedString: String{
+        let isoDateFormatter = ISO8601DateFormatter()
+        var formattedDate = validTime
+        if let date = isoDateFormatter.date(from: validTime){
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-dd-MM"
+            
+            formattedDate = dateFormatter.string(from: date)
+        }
+        return formattedDate
+    }
+    let maxTempF: Int
+    let minTempF: Int
     let weather: String
     //
     let weatherPrimary: String
@@ -28,7 +38,4 @@ struct PeriodsInfoArray: Codable {
     let sunrise: Int
     let sunset: Int
 }
-struct TimeZoneLocationDictionary: Codable {
-    let tz: String
-    
-}
+
