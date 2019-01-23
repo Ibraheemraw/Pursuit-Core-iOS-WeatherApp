@@ -14,6 +14,7 @@ class MainForcastViewController: UIViewController {
     @IBOutlet weak var zipCodeTitleLabelObj: UILabel!
     @IBOutlet weak var weakForcastCollectionViewObj: UICollectionView!
     var defaultZipcode = "10009"
+    var cityName = ""
     var forcastReport = [PeriodsInfoArray](){
         didSet{
             DispatchQueue.main.async {
@@ -31,6 +32,10 @@ class MainForcastViewController: UIViewController {
 //        dump(self.forcastReport)
         weakForcastCollectionViewObj.delegate = self
   }
+  
+        
+
+    
     func gatherWeatherForcastData(zipcodeEntry: String){
         AerisApiClient.searchWeatherForcast(zipcodeEntry: zipcodeEntry) { (appError, onlineWeatherData) in
             if let appError = appError {

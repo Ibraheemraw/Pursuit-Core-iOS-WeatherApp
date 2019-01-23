@@ -22,6 +22,7 @@ class DetailForcastViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupDetailForecastUI()
+        setUpImage()
     }
     func setupDetailForecastUI() {
       detailTitleLabelObj.text = "Sample"
@@ -31,8 +32,12 @@ class DetailForcastViewController: UIViewController {
         detailLowTmpLabelObj.text = "Low Temperature: 🌡\(expectingForecastObj.minTempF)°F"
         SunriseTimeStampLabelObj.text = "Sunrise: 🌅 \(expectingForecastObj.sunriseDateFormattedString)"
         sunsetTimeStampLabelObj.text = "Sunset: 🌇 \(expectingForecastObj.sunsetDateFormattedString)"
-        windSpeedLabelObj.text = "WindSpeed: 🌬 \(expectingForecastObj.windSpeedMPH)" //works
+        windSpeedLabelObj.text = "WindSpeed: 🌬 \(expectingForecastObj.windSpeedMPH) MPH" //works
         inchesOfPercipitationLabelObj.text = "Inches Of Percipitation: 💦  \(expectingForecastObj.precipIN)" //works
+        
+    }
+    
+    func setUpImage(){
         
     }
     

@@ -10,6 +10,8 @@
 		4812A6A821F699E800429727 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4812A6A721F699E800429727 /* AppError.swift */; };
 		4812A6AB21F6A3DF00429727 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4812A6AA21F6A3DF00429727 /* String+Extension.swift */; };
 		4812A6AD21F6A5CE00429727 /* CacheImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4812A6AC21F6A5CE00429727 /* CacheImageView.swift */; };
+		4812A6E521F8EC5E00429727 /* AllPixbayInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4812A6E421F8EC5E00429727 /* AllPixbayInfo.swift */; };
+		4812A6E721F8ED6900429727 /* PixbayApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4812A6E621F8ED6900429727 /* PixbayApiClient.swift */; };
 		48D9A6A721F662D000909CFB /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D9A6A621F662D000909CFB /* CollectionViewCell.swift */; };
 		48D9A6AB21F665BA00909CFB /* DetailForcastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D9A6AA21F665BA00909CFB /* DetailForcastViewController.swift */; };
 		48D9A6AD21F6668A00909CFB /* FavoriteForcastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D9A6AC21F6668A00909CFB /* FavoriteForcastViewController.swift */; };
@@ -40,6 +42,8 @@
 		4812A6A721F699E800429727 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		4812A6AA21F6A3DF00429727 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		4812A6AC21F6A5CE00429727 /* CacheImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheImageView.swift; sourceTree = "<group>"; };
+		4812A6E421F8EC5E00429727 /* AllPixbayInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPixbayInfo.swift; sourceTree = "<group>"; };
+		4812A6E621F8ED6900429727 /* PixbayApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixbayApiClient.swift; sourceTree = "<group>"; };
 		48D9A6A621F662D000909CFB /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		48D9A6AA21F665BA00909CFB /* DetailForcastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailForcastViewController.swift; sourceTree = "<group>"; };
 		48D9A6AC21F6668A00909CFB /* FavoriteForcastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteForcastViewController.swift; sourceTree = "<group>"; };
@@ -81,6 +85,7 @@
 		4812A6A921F69AAF00429727 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4812A6E421F8EC5E00429727 /* AllPixbayInfo.swift */,
 				48D9A6B421F6906C00909CFB /* AerisForcastData.swift */,
 			);
 			path = Model;
@@ -90,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				57EE009F21F15E0F00D76A6E /* ZipCodeHelper.swift */,
+				4812A6E621F8ED6900429727 /* PixbayApiClient.swift */,
 				48D9A6B221F68C9D00909CFB /* AerisApiClient.swift */,
 				4812A6A721F699E800429727 /* AppError.swift */,
 			);
@@ -278,8 +284,10 @@
 				48D9A6AD21F6668A00909CFB /* FavoriteForcastViewController.swift in Sources */,
 				48D9A6A721F662D000909CFB /* CollectionViewCell.swift in Sources */,
 				48D9A6B121F68A9700909CFB /* SecretKeys.swift in Sources */,
+				4812A6E721F8ED6900429727 /* PixbayApiClient.swift in Sources */,
 				57EE008E21F15D7000D76A6E /* AppDelegate.swift in Sources */,
 				4812A6A821F699E800429727 /* AppError.swift in Sources */,
+				4812A6E521F8EC5E00429727 /* AllPixbayInfo.swift in Sources */,
 				48D9A6AF21F67F3500909CFB /* FavoritesTableViewCell.swift in Sources */,
 				4812A6AD21F6A5CE00429727 /* CacheImageView.swift in Sources */,
 				48D9A6B521F6906C00909CFB /* AerisForcastData.swift in Sources */,

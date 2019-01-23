@@ -12,4 +12,5 @@ struct APIKey {
    static let clientKey = "53N8T9vRQqPQSNIpSeaf0p44yu7VE404WLb5MbTT"
     static let clientId = "Zb0ODoCUFLLpCDbqHpqs3"
 //    static let url = "http://api.aerisapi.com/forecasts/\(ZipCodeInPut)?client_id=\(clientId)&client_secret=\(clientKey)"
+    static let pixbayKey = "11367083-2bd1464288dadcfca1e09c20d"
 }
